@@ -19,7 +19,7 @@
 
 namespace Doctrine\MongoDB\Event;
 
-use Doctrine\Common\EventArgs;
+use Doctrine\Common2\EventArgs;
 
 /**
  * Group event args.

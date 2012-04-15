@@ -25,10 +25,10 @@ use Doctrine\ODM\MongoDB\Mapping\ClassMetadata,
     Doctrine\MongoDB\Connection,
     Doctrine\ODM\MongoDB\PersistentCollection,
     Doctrine\ODM\MongoDB\Proxy\ProxyFactory,
-    Doctrine\Common\Collections\ArrayCollection,
-    Doctrine\Common\EventManager,
+    Doctrine\Common2\Collections\ArrayCollection,
+    Doctrine\Common2\EventManager,
     Doctrine\ODM\MongoDB\Hydrator\HydratorFactory,
-    Doctrine\Common\Persistence\ObjectManager;
+    Doctrine\Common2\Persistence\ObjectManager;
 
 /**
  * The DocumentManager class is the central access point for managing the
@@ -52,84 +52,84 @@ class DocumentManager implements ObjectManager
      *
      * @var Doctrine\MongoDB\Connection
      */
-    private $connection;
+    protected $connection;
 
     /**
      * The used Configuration.
      *
      * @var Doctrine\ODM\MongoDB\Configuration
      */
-    private $config;
+    protected $config;
 
     /**
      * The metadata factory, used to retrieve the ODM metadata of document classes.
      *
      * @var Doctrine\ODM\MongoDB\Mapping\ClassMetadataFactory
      */
-    private $metadataFactory;
+    protected $metadataFactory;
 
     /**
      * The DocumentRepository instances.
      *
      * @var array
      */
-    private $repositories = array();
+    protected $repositories = array();
 
     /**
      * The UnitOfWork used to coordinate object-level transactions.
      *
      * @var Doctrine\ODM\MongoDB\UnitOfWork
      */
-    private $unitOfWork;
+    protected $unitOfWork;
 
     /**
      * The event manager that is the central point of the event system.
      *
-     * @var Doctrine\Common\EventManager
+     * @var Doctrine\Common2\EventManager
      */
-    private $eventManager;
+    protected $eventManager;
 
     /**
      * The Hydrator factory instance.
      *
      * @var HydratorFactory
      */
-    private $hydratorFactory;
+    protected $hydratorFactory;
 
     /**
      * SchemaManager instance
      *
      * @var Doctrine\ODM\MongoDB\SchemaManager
      */
-    private $schemaManager;
+    protected $schemaManager;
 
     /**
      * Array of cached document database instances that are lazily loaded.
      *
      * @var array
      */
-    private $documentDatabases = array();
+    protected $documentDatabases = array();
 
     /**
      * Array of cached document collection instances that are lazily loaded.
      *
      * @var array
      */
-    private $documentCollections = array();
+    protected $documentCollections = array();
 
     /**
      * Whether the DocumentManager is closed or not.
      *
      * @var bool
      */
-    private $closed = false;
+    protected $closed = false;
 
     /**
      * Mongo command character
      *
      * @var string
      */
-    private $cmd;
+    protected $cmd;
 
     /**
      * Creates a new Document that operates on the given Mongo connection
@@ -137,7 +137,7 @@ class DocumentManager implements ObjectManager
      *
      * @param Doctrine\MongoDB\Connection $conn
      * @param Doctrine\ODM\MongoDB\Configuration $config
-     * @param Doctrine\Common\EventManager $eventManager
+     * @param Doctrine\Common2\EventManager $eventManager
      */
     protected function __construct(Connection $conn = null, Configuration $config = null, EventManager $eventManager = null)
     {
@@ -191,7 +191,7 @@ class DocumentManager implements ObjectManager
      *
      * @param Doctrine\MongoDB\Connection $conn
      * @param Doctrine\ODM\MongoDB\Configuration $config
-     * @param Doctrine\Common\EventManager $eventManager
+     * @param Doctrine\Common2\EventManager $eventManager
      */
     public static function create(Connection $conn = null, Configuration $config = null, EventManager $eventManager = null)
     {
@@ -201,7 +201,7 @@ class DocumentManager implements ObjectManager
     /**
      * Gets the EventManager used by the DocumentManager.
      *
-     * @return Doctrine\Common\EventManager
+     * @return Doctrine\Common2\EventManager
      */
     public function getEventManager()
     {
@@ -670,4 +670,13 @@ class DocumentManager implements ObjectManager
             throw MongoDBException::documentManagerClosed();
         }
     }
+
+    /**
+     * @multee
+     * TODO: contribute to doctrine and help them to keep packet version like common ... ?
+     */
+    function initializeObject($obj){ 
+        throw New Exception('not supported yet');    
+    }
+
 }

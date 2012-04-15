@@ -21,7 +21,7 @@ namespace Doctrine\ODM\MongoDB\Mapping\Driver;
 
 use Doctrine\ODM\MongoDB\Mapping\ClassMetadata,
     Doctrine\ODM\MongoDB\Mapping\ClassMetadataInfo,
-    Doctrine\Common\Annotations\AnnotationReader,
+    Doctrine\Common2\Annotations\AnnotationReader,
     Doctrine\ODM\MongoDB\MongoDBException;
 
 require __DIR__ . '/DoctrineAnnotations.php';

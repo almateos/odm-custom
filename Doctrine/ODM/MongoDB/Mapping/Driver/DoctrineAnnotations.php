@@ -21,7 +21,7 @@
 
 namespace Doctrine\ODM\MongoDB\Mapping;
 
-use Doctrine\Common\Annotations\Annotation;
+use Doctrine\Common2\Annotations\Annotation;
 
 final class Document extends Annotation
 {

@@ -19,7 +19,7 @@
 
 namespace Doctrine\ODM\MongoDB;
 
-use Doctrine\Common\Collections\Collection as BaseCollection,
+use Doctrine\Common2\Collections\Collection as BaseCollection,
     Doctrine\ODM\MongoDB\Mapping\ClassMetadata,
     Doctrine\ODM\MongoDB\Proxy\Proxy,
     Closure;

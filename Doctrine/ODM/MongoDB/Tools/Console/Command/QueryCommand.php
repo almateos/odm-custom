@@ -110,6 +110,6 @@ EOT
 
         $resultSet = $cursor->toArray();
 
-        \Doctrine\Common\Util\Debug::dump($resultSet, $depth);
+        \Doctrine\Common2\Util\Debug::dump($resultSet, $depth);
     }
 }

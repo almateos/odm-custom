@@ -20,7 +20,7 @@
 namespace Doctrine\ODM\MongoDB\Tools;
 
 use Doctrine\ODM\MongoDB\Mapping\ClassMetadataInfo,
-    Doctrine\Common\Util\Inflector;
+    Doctrine\Common2\Util\Inflector;
 
 /**
  * Generic class used to generate PHP5 document classes from ClassMetadataInfo instances
@@ -388,7 +388,7 @@ public function <methodName>()
         $collections = array();
         foreach ($metadata->fieldMappings AS $mapping) {
             if ($mapping['type'] === ClassMetadataInfo::MANY) {
-                $collections[] = '$this->'.$mapping['fieldName'].' = new \Doctrine\Common\Collections\ArrayCollection();';
+                $collections[] = '$this->'.$mapping['fieldName'].' = new \Doctrine\Common2\Collections\ArrayCollection();';
             }
         }
         if ($collections) {
@@ -617,7 +617,7 @@ public function <methodName>()
                 if ($code = $this->generateDocumentStubMethod($metadata, 'add', $fieldMapping['fieldName'], isset($fieldMapping['targetDocument']) ? $fieldMapping['targetDocument'] : null)) {
                     $methods[] = $code;
                 }
-                if ($code = $this->generateDocumentStubMethod($metadata, 'get', $fieldMapping['fieldName'], 'Doctrine\Common\Collections\Collection')) {
+                if ($code = $this->generateDocumentStubMethod($metadata, 'get', $fieldMapping['fieldName'], 'Doctrine\Common2\Collections\Collection')) {
                     $methods[] = $code;
                 }
             }

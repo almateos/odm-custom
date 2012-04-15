@@ -19,7 +19,7 @@
 
 namespace Doctrine\ODM\MongoDB;
 
-use Doctrine\Common\EventManager,
+use Doctrine\Common2\EventManager,
     Doctrine\ODM\MongoDB\Internal\CommitOrderCalculator,
     Doctrine\ODM\MongoDB\Mapping\ClassMetadata,
     Doctrine\ODM\MongoDB\Proxy\Proxy,
@@ -28,10 +28,10 @@ use Doctrine\Common\EventManager,
     Doctrine\ODM\MongoDB\Event\PreLoadEventArgs,
     Doctrine\ODM\MongoDB\PersistentCollection,
     Doctrine\ODM\MongoDB\Persisters\PersistenceBuilder,
-    Doctrine\Common\Collections\Collection,
-    Doctrine\Common\NotifyPropertyChanged,
-    Doctrine\Common\PropertyChangedListener,
-    Doctrine\Common\Collections\ArrayCollection,
+    Doctrine\Common2\Collections\Collection,
+    Doctrine\Common2\NotifyPropertyChanged,
+    Doctrine\Common2\PropertyChangedListener,
+    Doctrine\Common2\Collections\ArrayCollection,
     Doctrine\MongoDB\GridFSFile,
     Doctrine\ODM\MongoDB\Query\Query,
     Doctrine\ODM\MongoDB\Hydrator\HydratorFactory;
@@ -249,7 +249,7 @@ class UnitOfWork implements PropertyChangedListener
      * Initializes a new UnitOfWork instance, bound to the given DocumentManager.
      *
      * @param Doctrine\ODM\MongoDB\DocumentManager $dm
-     * @param Doctrine\Common\EventManager $evm
+     * @param Doctrine\Common2\EventManager $evm
      * @param Doctrine\ODM\MongoDB\Hydrator\HydratorFactory $hydratorFactory
      * @param string $cmd
      */

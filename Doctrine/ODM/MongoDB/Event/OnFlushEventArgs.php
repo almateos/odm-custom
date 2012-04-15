@@ -21,7 +21,7 @@
 
 namespace Doctrine\ODM\MongoDB\Event;
 
-use Doctrine\Common\EventArgs;
+use Doctrine\Common2\EventArgs;
 
 /**
  * Provides event arguments for the preFlush event.

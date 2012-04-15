@@ -20,12 +20,12 @@
 namespace Doctrine\ODM\MongoDB\Persisters;
 
 use Doctrine\ODM\MongoDB\DocumentManager,
-    Doctrine\Common\EventManager,
+    Doctrine\Common2\EventManager,
     Doctrine\ODM\MongoDB\UnitOfWork,
     Doctrine\ODM\MongoDB\Hydrator\HydratorFactory,
     Doctrine\ODM\MongoDB\Mapping\ClassMetadata,
     Doctrine\ODM\MongoDB\Mapping\Types\Type,
-    Doctrine\Common\Collections\Collection,
+    Doctrine\Common2\Collections\Collection,
     Doctrine\ODM\MongoDB\Events,
     Doctrine\ODM\MongoDB\Event\OnUpdatePreparedArgs,
     Doctrine\ODM\MongoDB\MongoDBException,
@@ -67,7 +67,7 @@ class DocumentPersister
     /**
      * The EventManager instance
      *
-     * @var Doctrine\Common\EventManager
+     * @var Doctrine\Common2\EventManager
      */
     private $evm;
 
@@ -130,7 +130,7 @@ class DocumentPersister
      *
      * @param Doctrine\ODM\MongoDB\Persisters\PersistenceBuilder $pb
      * @param Doctrine\ODM\MongoDB\DocumentManager $dm
-     * @param Doctrine\Common\EventManager $evm
+     * @param Doctrine\Common2\EventManager $evm
      * @param Doctrine\ODM\MongoDB\UnitOfWork $uow
      * @param Doctrine\ODM\MongoDB\Hydrator\HydratorFactory $hydratorFactory
      * @param Doctrine\ODM\MongoDB\Mapping\ClassMetadata $class

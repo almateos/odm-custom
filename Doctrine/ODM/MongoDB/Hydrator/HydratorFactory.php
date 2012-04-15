@@ -24,11 +24,11 @@ use Doctrine\ODM\MongoDB\DocumentManager;
 use Doctrine\ODM\MongoDB\Mapping\Types\Type;
 use Doctrine\ODM\MongoDB\UnitOfWork;
 use Doctrine\ODM\MongoDB\Events;
-use Doctrine\Common\EventManager;
+use Doctrine\Common2\EventManager;
 use Doctrine\ODM\MongoDB\Event\LifecycleEventArgs;
 use Doctrine\ODM\MongoDB\Event\PreLoadEventArgs;
 use Doctrine\ODM\MongoDB\PersistentCollection;
-use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common2\Collections\ArrayCollection;
 
 /**
  * The HydratorFactory class is responsible for instantiating a correct hydrator
@@ -58,7 +58,7 @@ class HydratorFactory
     /**
      * The EventManager associated with this Hydrator
      *
-     * @var Doctrine\Common\EventManager
+     * @var Doctrine\Common2\EventManager
      */
     private $evm;
 
@@ -261,7 +261,7 @@ EOF
 
         /** @Many */
         \$mongoData = isset(\$data['%1\$s']) ? \$data['%1\$s'] : null;
-        \$return = new \Doctrine\ODM\MongoDB\PersistentCollection(new \Doctrine\Common\Collections\ArrayCollection(), \$this->dm, \$this->unitOfWork, '$');
+        \$return = new \Doctrine\ODM\MongoDB\PersistentCollection(new \Doctrine\Common2\Collections\ArrayCollection(), \$this->dm, \$this->unitOfWork, '$');
         \$return->setOwner(\$document, \$this->class->fieldMappings['%2\$s']);
         \$return->setInitialized(false);
         if (\$mongoData) {

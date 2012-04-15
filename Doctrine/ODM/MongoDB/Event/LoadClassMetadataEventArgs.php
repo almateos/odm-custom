@@ -19,7 +19,7 @@
 
 namespace Doctrine\ODM\MongoDB\Event;
 
-use Doctrine\Common\EventArgs,
+use Doctrine\Common2\EventArgs,
     Doctrine\ODM\MongoDB\Mapping\ClassMetadata,
     Doctrine\ODM\MongoDB\DocumentManager;
 

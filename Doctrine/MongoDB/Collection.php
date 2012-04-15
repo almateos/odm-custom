@@ -19,7 +19,7 @@
 
 namespace Doctrine\MongoDB;
 
-use Doctrine\Common\EventManager,
+use Doctrine\Common2\EventManager,
     Doctrine\ODM\Event\EventArgs;
 
 /**
@@ -50,7 +50,7 @@ class Collection
     /**
      * The event manager that is the central point of the event system.
      *
-     * @var Doctrine\Common\EventManager
+     * @var Doctrine\Common2\EventManager
      */
     protected $eventManager;
 

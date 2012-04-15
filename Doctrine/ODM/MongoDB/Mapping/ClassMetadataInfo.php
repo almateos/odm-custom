@@ -43,7 +43,8 @@ use Doctrine\ODM\MongoDB\MongoDBException,
  * @author      Jonathan H. Wage <jonwage@gmail.com>
  * @author      Roman Borschel <roman@code-factory.org>
  */
-class ClassMetadataInfo implements \Doctrine\Common\Persistence\Mapping\ClassMetadata
+//@multee: comment below fix Common2's orm compatibility issues
+class ClassMetadataInfo //implements \Doctrine\Common2\Persistence\Mapping\ClassMetadata
 {
     /* The Id generator types. */
     /**

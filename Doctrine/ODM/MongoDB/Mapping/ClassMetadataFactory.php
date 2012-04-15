@@ -24,7 +24,7 @@ use Doctrine\ODM\MongoDB\DocumentManager,
     Doctrine\ODM\MongoDB\Mapping\ClassMetadata,
     Doctrine\ODM\MongoDB\MongoDBException,
     Doctrine\ODM\MongoDB\Events,
-    Doctrine\Common\Cache\Cache,
+    Doctrine\Common2\Cache\Cache,
     Doctrine\ODM\MongoDB\Mapping\Types\Type;
 
 /**
@@ -38,7 +38,7 @@ use Doctrine\ODM\MongoDB\DocumentManager,
  * @author      Jonathan H. Wage <jonwage@gmail.com>
  * @author      Roman Borschel <roman@code-factory.org>
  */
-class ClassMetadataFactory implements \Doctrine\Common\Persistence\Mapping\ClassMetadataFactory
+class ClassMetadataFactory implements \Doctrine\Common2\Persistence\Mapping\ClassMetadataFactory
 {
     /** The DocumentManager instance */
     private $dm;
@@ -95,7 +95,7 @@ class ClassMetadataFactory implements \Doctrine\Common\Persistence\Mapping\Class
     /**
      * Sets the cache driver used by the factory to cache ClassMetadata instances.
      *
-     * @param Doctrine\Common\Cache\Cache $cacheDriver
+     * @param Doctrine\Common2\Cache\Cache $cacheDriver
      */
     public function setCacheDriver($cacheDriver)
     {
@@ -105,7 +105,7 @@ class ClassMetadataFactory implements \Doctrine\Common\Persistence\Mapping\Class
     /**
      * Gets the cache driver used by the factory to cache ClassMetadata instances.
      *
-     * @return Doctrine\Common\Cache\Cache
+     * @return Doctrine\Common2\Cache\Cache
      */
     public function getCacheDriver()
     {

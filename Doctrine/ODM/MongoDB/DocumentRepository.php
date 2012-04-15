@@ -20,7 +20,7 @@
 
 namespace Doctrine\ODM\MongoDB;
 
-use Doctrine\Common\Persistence\ObjectRepository;
+use Doctrine\Common2\Persistence\ObjectRepository;
 
 /**
  * An DocumentRepository serves as a repository for documents with generic as well as
@@ -186,7 +186,7 @@ class DocumentRepository implements ObjectRepository
             throw MongoDBException::findByRequiresParameter($method.$by);
         }
 
-        $fieldName = lcfirst(\Doctrine\Common\Util\Inflector::classify($by));
+        $fieldName = lcfirst(\Doctrine\Common2\Util\Inflector::classify($by));
 
         if ($this->class->hasField($fieldName)) {
             return $this->$method(array($fieldName => $arguments[0]));

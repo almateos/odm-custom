@@ -21,7 +21,7 @@ namespace Doctrine\ODM\MongoDB;
 
 use Doctrine\ODM\MongoDB\Mapping\Driver\Driver,
     Doctrine\ODM\MongoDB\Mapping\Driver\PHPDriver,
-    Doctrine\Common\Cache\Cache;
+    Doctrine\Common2\Cache\Cache;
 
 /**
  * Configuration class for the DocumentManager. When setting up your DocumentManager
@@ -99,7 +99,7 @@ class Configuration extends \Doctrine\MongoDB\Configuration
      */
     public function newDefaultAnnotationDriver($paths = array())
     {
-        $reader = new \Doctrine\Common\Annotations\AnnotationReader();
+        $reader = new \Doctrine\Common2\Annotations\AnnotationReader();
         $reader->setDefaultAnnotationNamespace('Doctrine\ODM\MongoDB\Mapping\\');
         
         return new \Doctrine\ODM\MongoDB\Mapping\Driver\AnnotationDriver($reader, (array) $paths);
@@ -119,7 +119,7 @@ class Configuration extends \Doctrine\MongoDB\Configuration
     /**
      * Gets the cache driver implementation that is used for metadata caching.
      *
-     * @return \Doctrine\Common\Cache\Cache
+     * @return \Doctrine\Common2\Cache\Cache
      */
     public function getMetadataCacheImpl()
     {
@@ -130,7 +130,7 @@ class Configuration extends \Doctrine\MongoDB\Configuration
     /**
      * Sets the cache driver implementation that is used for metadata caching.
      *
-     * @param \Doctrine\Common\Cache\Cache $cacheImpl
+     * @param \Doctrine\Common2\Cache\Cache $cacheImpl
      */
     public function setMetadataCacheImpl(Cache $cacheImpl)
     {
